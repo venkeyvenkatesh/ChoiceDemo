@@ -1,0 +1,131 @@
+﻿<process name="Calculate Grade" version="1.0" bpversion="6.9.0.26970" narrative="Getting gardes based on Marks" byrefcollection="true" type="object" runmode="Exclusive" preferredid="0d653c64-433d-499b-9898-95f643f01744">
+  <appdef>
+    <element name="Application Root">
+      <id>91a6d792-4083-4c2d-b5fa-3dd8e8a86b08</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="1cd232fc-c717-4dfb-b9e4-e624e1f17f21" name="Calculate Grade" type="SubSheetInfo">
+    <display x="-495" y="-90" w="150" h="90" />
+  </stage>
+  <stage stageid="913a94a9-a029-4832-a658-c9b8665c8b39" name="Start" type="Start">
+    <loginhibit />
+    <display x="-240" y="-210" w="90" h="60" />
+    <onsuccess>eda53fb4-7666-49ef-8055-a31437c27544</onsuccess>
+  </stage>
+  <stage stageid="a9a5e7eb-4edd-452a-ba60-2f17ec6db608" name="End" type="End">
+    <loginhibit />
+    <display x="450" y="-15" w="90" h="60" />
+  </stage>
+  <stage stageid="eda53fb4-7666-49ef-8055-a31437c27544" name="Choice1" type="ChoiceStart">
+    <loginhibit />
+    <display x="-60" y="-210" w="120" h="60" />
+    <groupid>b57522ea-422b-4fa2-949b-2cf4157120e5</groupid>
+    <choices>
+      <choice expression="[Average]&gt;90 AND [Average]&lt;=100">
+        <name>GradeA</name>
+        <distance>45</distance>
+        <ontrue>f0fbea69-9456-4ba8-a3ed-cedaef4a619e</ontrue>
+      </choice>
+      <choice expression="[Average]&gt;80 AND [Average]&lt;=90&#xA;">
+        <name>GradeB</name>
+        <distance>105</distance>
+        <ontrue>265ecb6b-5f46-459b-9cad-49e6caa99568</ontrue>
+      </choice>
+      <choice expression="[Average]&gt;70 AND [Average]&lt;=80&#xA;">
+        <name>GradeC</name>
+        <distance>165</distance>
+        <ontrue>be20a60d-cecf-4f18-acc3-7decd6287339</ontrue>
+      </choice>
+      <choice expression="[Average]&gt;60 AND [Average]&lt;=70&#xA;">
+        <name>GradeD</name>
+        <distance>225</distance>
+        <ontrue>0b094479-66c3-436f-80cb-3dad917c72f3</ontrue>
+      </choice>
+      <choice expression="[Average]&gt;50 AND [Average]&lt;=60&#xA;">
+        <name>GradeE</name>
+        <distance>285</distance>
+        <ontrue>b8200bc2-01b8-4de7-bd5d-27fa89fc97a2</ontrue>
+      </choice>
+      <choice expression="[Average]&gt;=0 AND [Average]&lt;=50&#xA;">
+        <name>GradeF</name>
+        <distance>360</distance>
+        <ontrue>43d17b5a-0c11-452d-95d5-49639dae77d0</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="d6bab784-02c0-4f7c-99d7-436629e78d25" name="Otherwise1" type="ChoiceEnd">
+    <loginhibit />
+    <display x="-60" y="240" w="90" h="60" />
+    <onsuccess>df16b584-82a9-4c1b-b71e-9e70bef47dd2</onsuccess>
+    <groupid>b57522ea-422b-4fa2-949b-2cf4157120e5</groupid>
+  </stage>
+  <stage stageid="2117cce0-e31a-4e1b-b641-05a6f5699d33" name="Average" type="Data">
+    <loginhibit />
+    <display x="585" y="-195" w="90" h="60" />
+    <datatype>number</datatype>
+    <initialvalue>80</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="156c43a5-bdf8-4e06-97fc-28edc6ce762d" name="Grade" type="Data">
+    <loginhibit />
+    <display x="480" y="-195" w="90" h="60" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f0fbea69-9456-4ba8-a3ed-cedaef4a619e" name="GradeA" type="Calculation">
+    <loginhibit />
+    <display x="120" y="-165" />
+    <onsuccess>a9a5e7eb-4edd-452a-ba60-2f17ec6db608</onsuccess>
+    <calculation expression="&quot;Grade A&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="265ecb6b-5f46-459b-9cad-49e6caa99568" name="GradeB" type="Calculation">
+    <loginhibit />
+    <display x="135" y="-105" />
+    <onsuccess>a9a5e7eb-4edd-452a-ba60-2f17ec6db608</onsuccess>
+    <calculation expression="&quot;Grade B&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="be20a60d-cecf-4f18-acc3-7decd6287339" name="GradeC" type="Calculation">
+    <loginhibit />
+    <display x="150" y="-45" />
+    <onsuccess>a9a5e7eb-4edd-452a-ba60-2f17ec6db608</onsuccess>
+    <calculation expression="&quot;Grade C&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="0b094479-66c3-436f-80cb-3dad917c72f3" name="GradeD" type="Calculation">
+    <loginhibit />
+    <display x="150" y="15" />
+    <onsuccess>a9a5e7eb-4edd-452a-ba60-2f17ec6db608</onsuccess>
+    <calculation expression="&quot;Grade D&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="b8200bc2-01b8-4de7-bd5d-27fa89fc97a2" name="GradeE" type="Calculation">
+    <loginhibit />
+    <display x="150" y="75" />
+    <onsuccess>a9a5e7eb-4edd-452a-ba60-2f17ec6db608</onsuccess>
+    <calculation expression="&quot;Grade E&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="43d17b5a-0c11-452d-95d5-49639dae77d0" name="GradeF" type="Calculation">
+    <loginhibit />
+    <display x="165" y="150" />
+    <onsuccess>a9a5e7eb-4edd-452a-ba60-2f17ec6db608</onsuccess>
+    <calculation expression="&quot;Grade F&quot;" stage="Grade" />
+  </stage>
+  <stage stageid="df16b584-82a9-4c1b-b71e-9e70bef47dd2" name="InvalidGardae" type="Calculation">
+    <loginhibit />
+    <display x="180" y="225" />
+    <onsuccess>a9a5e7eb-4edd-452a-ba60-2f17ec6db608</onsuccess>
+    <calculation expression="&quot;Invalid Grade&quot;" stage="Grade" />
+  </stage>
+</process>
